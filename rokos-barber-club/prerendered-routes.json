@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/",
+    "/contacto",
+    "/marcas",
+    "/reservar",
+    "/servicios"
+  ]
+}
