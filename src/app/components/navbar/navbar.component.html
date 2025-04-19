@@ -1,0 +1,28 @@
+<nav class="navbar" role="navigation">
+  <div class="logo">
+    <img src="assets/logo4.png" alt="Rokos Logo" />
+  </div>
+
+  <!-- Ícono hamburguesa -->
+  <div class="menu-toggle" (click)="toggleMenu()">
+    ☰
+  </div>
+
+  <!-- Menú navegable -->
+  <div class="nav-links" [class.active]="menuAbierto">
+    <a (click)="scrollTo('inicio')">Inicio</a>
+    <a (click)="scrollTo('quienes-somos')">Sobre Nosotros</a>
+    <a (click)="scrollTo('servicios')">Servicios</a>
+    <a (click)="scrollTo('marcas')">Marcas</a>
+    <a (click)="scrollTo('contacto')">Contacto</a>
+
+    <a
+      class="reservar-btn"
+      href="https://rokosbarberclub.site.agendapro.com/cl/sucursal/61199"
+      target="_blank"
+      (click)="closeMenu()"
+    >
+      Reservar ahora
+    </a>
+  </div>
+</nav>

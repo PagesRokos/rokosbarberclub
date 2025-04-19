@@ -1,0 +1,54 @@
+@media (max-width: 768px) {
+    .seccion {
+      padding: 3rem 1.5rem;
+  
+      .contenido {
+        h1, h2 {
+          font-size: calc(1.8rem - 0.2rem);
+        }
+  
+        p, li {
+          font-size: calc(1rem - 0.1rem);
+        }
+  
+        ul {
+          padding-left: 1rem;
+          text-align: left;
+        }
+  
+        a.btn-agendar {
+          font-size: 1rem;
+          padding: 0.6rem 1.2rem;
+        }
+      }
+    }
+  
+    .slide-contenido {
+      h1 {
+        font-size: 2rem;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+  
+      .btn-agendar {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  
+    .separador-barber img {
+      width: 32px;
+    }
+  
+    .whatsapp-button {
+      width: 48px;
+      height: 48px;
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }

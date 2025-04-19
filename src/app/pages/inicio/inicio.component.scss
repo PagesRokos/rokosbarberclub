@@ -1,0 +1,333 @@
+
+
+:root {
+  --rojo-barber: #c1272d;
+  --negro-base: #0a0a0a;
+  --negro-secundario: #141414;
+  --primary-color: #c1272d;
+  --secondary-color: #1c75bc;
+  --background-dark: #111;
+  --text-light: #fff;
+  --text-dark: #000;
+  --transition: 0.3s ease;
+  --fuente-titulos: 'Oswald', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--negro-base);
+  color: var(--text-light);
+  font-family: 'Roboto Condensed', sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
+  font-family: 'Staatliches', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: var(--text-light);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Nunito Light', sans-serif;
+}
+
+@media (max-width: 480px) {
+  html, body {
+    padding: 0.5rem;
+  }
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition), width var(--transition), height var(--transition);
+  width: 60px;
+  height: 60px;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    width: 48px;
+    height: 48px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+/* PRELOADER */
+#app-preloader {
+  position: fixed;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.95);
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition);
+  opacity: 1;
+
+  img {
+    width: 120px;
+    margin-bottom: 1.5rem;
+  }
+
+  .spinner {
+    border: 4px solid #fff;
+    border-top: 4px solid #c1272d;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* SLIDER HERO */
+.seccion-inicio {
+  background-color: #000;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+
+  .slider-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .slider {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    min-width: 100%;
+
+    .slide-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(0.5);
+      z-index: 1;
+      transition: filter 0.3s ease;
+    }
+
+    .slide-contenido {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: white;
+      text-align: center;
+      width: 90%;
+      max-width: 1200px;
+      padding: 2rem;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s ease;
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        margin-bottom: 2.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+
+      .btn-agendar {
+        background-color: #c1272d;
+        color: white;
+        padding: 0.75rem 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        display: inline-block;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+
+        &:hover {
+          background-color: #a61f25;
+          transform: translateY(-3px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+    }
+  }
+
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 3;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+
+    &:hover {
+      color: #c1272d;
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 1;
+    }
+
+    &.prev {
+      left: 1.5rem;
+    }
+
+    &.next {
+      right: 1.5rem;
+    }
+  }
+
+  .slider-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 3;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+
+    .dot {
+      width: clamp(10px, 2vw, 14px);
+      height: clamp(10px, 2vw, 14px);
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background-color: #c1272d;
+        transform: scale(1.2);
+      }
+
+      &:hover:not(.active) {
+        background-color: #fff;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .seccion-inicio {
+    .slide {
+      .slide-contenido {
+        top: 45%;
+        width: 95%;
+        padding: 1rem;
+
+        h1 {
+          margin-bottom: 1rem;
+        }
+
+        p {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    .slider-btn {
+      width: 40px;
+      height: 40px;
+      padding: 0.8rem;
+
+      &.prev {
+        left: 0.5rem;
+      }
+
+      &.next {
+        right: 0.5rem;
+      }
+    }
+
+    .slider-dots {
+      bottom: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .seccion-inicio {
+    .slide {
+      .slide-contenido {
+        top: 40%;
+
+        .btn-agendar {
+          padding: 0.6rem 1.5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

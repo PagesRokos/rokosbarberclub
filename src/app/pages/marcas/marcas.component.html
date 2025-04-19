@@ -1,0 +1,23 @@
+<section id="marcas" class="seccion seccion-marcas animada" aria-labelledby="marcas-title">
+  <div class="marcas-grid">
+    <div class="marcas-texto">
+      <h2 id="marcas-title">Nuestras Marcas</h2>
+      <p>
+        En Rokos Barber Club trabajamos con marcas profesionales que garantizan
+        calidad, cuidado y estilo. Cada producto ha sido seleccionado por su
+        efectividad y prestigio en el mundo de la barbería.
+      </p>
+    </div>
+
+    <div class="marcas-carousel" role="region" aria-label="Carrusel de logos de marcas">
+      <div #track class="carousel-track">
+        <ng-container *ngFor="let logo of logos">
+          <img [src]="logo.src" [alt]="logo.alt" loading="lazy" />
+        </ng-container>
+        <ng-container *ngFor="let logo of logos">
+          <img [src]="logo.src" [alt]="logo.alt" aria-hidden="true" loading="lazy" />
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

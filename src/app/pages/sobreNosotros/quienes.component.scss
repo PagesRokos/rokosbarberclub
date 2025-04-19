@@ -1,0 +1,200 @@
+:root {
+  --rojo-barber: #c1272d;
+  --negro-base: #0a0a0a;
+  --negro-secundario: #141414;
+  --primary-color: #c1272d;
+  --secondary-color: #1c75bc;
+  --background-dark: #111;
+  --text-light: #fff;
+  --text-dark: #000;
+  --transition: 0.3s ease;
+  --fuente-titulos: 'Oswald', sans-serif;
+}
+
+/* ==============================
+   SECCIÓN QUIÉNES SOMOS
+   ============================== */
+.seccion-quienes {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 0;
+  border-top: 3px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+
+  .contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    justify-items: start;
+  }
+
+  .quienes-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+    h2 {
+      font-family: var(--fuente-titulos);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .btn-agendar {
+      display: block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      margin: 0 auto 1rem;    /* sólo el botón centrado */
+      transition: all var(--transition);
+      border: 2px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover {
+        background-color: #a61f25;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+
+  .quienes-imagen {
+    position: relative;           /* necesario para ::before */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition);
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(20%) contrast(110%);
+      transition: filter var(--transition);
+    }
+    &:hover img {
+      filter: grayscale(0%) contrast(100%);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(
+        45deg,
+        rgba(193,39,45,0.1) 0%,
+        rgba(0,0,0,0.3) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  &.animada {
+    /* Sólo la animación en este layer, sin tocar el fondo */
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 992px) {
+  .seccion-quienes {
+    .contenido {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      justify-items: center;
+    }
+
+    .quienes-texto {
+      align-items: center;
+      text-align: center;
+    }
+
+    .quienes-imagen {
+      order: -1;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .seccion-quienes {
+    padding: 3rem 0;
+
+    .contenido {
+      padding: 0 1.5rem;
+    }
+
+    .quienes-imagen {
+      max-width: 100%;
+    }
+
+    .quienes-texto {
+      align-items: center;
+      text-align: center;
+
+      .btn-agendar {
+        margin: 1.5rem auto 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .seccion-quienes {
+    padding: 2rem 0;
+
+    .contenido {
+      padding: 0 1rem;
+    }
+
+    .quienes-texto {
+      .btn-agendar {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
