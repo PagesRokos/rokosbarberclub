@@ -1,11 +1,58 @@
 <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 Rokos Barber Club. Todos los derechos reservados.</p>
-      <p>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> |
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a> |
-        <a href="mailto:contacto&#64;rokosbarber.cl">contacto&#64;rokosbarber.cl</a>
-      </p>
+  <div class="footer-content split">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="assets/logob.png" alt="Logo Rokos Barber Club" />
+      </div>
+      <p class="footer-desc">&copy; 2025 Rokos Barber Club. 
+        Todos los derechos reservados.</p>
     </div>
-  </footer>
-  
+    <div class="footer-right">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <ul>
+            <li>Teléfono Fijo: <a href="tel:+56432642219">+56 43 264 2219</a></li>
+            <li>Teléfono Celular: <a href="tel:+56982512970">+56 9 8251 2970</a></li>
+            <li>Email: <a href="mailto:contacto&#64;rokosbarber.cl">contacto&#64;rokosbarber.cl</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Informaciones</h5>
+          <ul>
+            <li><a href="#" (click)="openTerms($event)">Términos y Servicio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Redes Sociales</h5>
+          <ul>
+            <li><a href="https://www.instagram.com/rokosbarberclub/#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/Rokosbarber" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@rokosbarberclub" target="_blank" rel="noopener noreferrer">Tiktok</a></li>
+            <li><a href="https://rokosbarberclub.site.agendapro.com/cl/sucursal/61199" class="footer-btn">Reserva tu hora</a></li>
+            <li><a href="https://api.whatsapp.com/send/?phone=56982512970&text=Hola%2C+quiero+reservar+una+hora+en+Rokos+Barber+Club.&type=phone_number&app_absent=0" class="footer-btn">Habla con nosotros</a></li>
+          </ul>
+          <div class="footer-actions">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="terms-modal" *ngIf="showTerms">
+    <div class="terms-modal-content">
+      <button class="close-btn" (click)="closeTerms()">&times;</button>
+      <h2>TÉRMINOS Y CONDICIONES ROKOS BARBER CLUB</h2>
+      <ul>
+        <li>El tiempo máximo de espera es de 10 minutos, una vez transcurrido, la reserva quedará anulada.</li>
+        <li>Luego de DOS INASISTENCIAS, se solicitará el prepago total del servicio para confirmar su reserva.</li>
+        <li>Las cancelaciones deben realizarse con un máximo de 2 horas de anticipación.</li>
+        <li>Las reservas ya pagadas por completo y/o abonos pueden reagendarse hasta un máximo de dos veces.</li>
+        <li>Los pagos ONLINE* de servicios serán reembolsados, SOLO en el caso debidamente justificado hasta 2 horas previas al servicio.</li>
+        <li>Los reembolsos se realizan según la política de la barbería hasta 15 días hábiles de la realización del reclamo por parte de cliente.</li>
+        <li>La barbería se reserva el derecho de cancelar o modificar reservas si es necesario.</li>
+        <li>La barbería no se responsabiliza por daños o pérdidas al interior del establecimiento.</li>
+      </ul>
+    </div>
+  </div>
+</footer>

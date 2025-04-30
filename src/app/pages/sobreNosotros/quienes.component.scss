@@ -1,14 +1,14 @@
 :root {
-  --rojo-barber: #c1272d;
+  --rojo-barber: #2C2C2C; // antes: #c1272d
   --negro-base: #0a0a0a;
   --negro-secundario: #141414;
-  --primary-color: #c1272d;
-  --secondary-color: #1c75bc;
-  --background-dark: #111;
+  --primary-color: #2C2C2C; // antes: #c1272d
+  --secondary-color: #4F4F4F; // antes: #1c75bc
+  --background-dark: #1A1A1A; // antes: #111
   --text-light: #fff;
   --text-dark: #000;
   --transition: 0.3s ease;
-  --fuente-titulos: 'Oswald', sans-serif;
+  --fuente-titulos: 'Cinzel Decorative', serif;
 }
 
 /* ==============================
@@ -42,7 +42,6 @@
     h2 {
       font-family: var(--fuente-titulos);
       font-size: clamp(1.8rem, 4vw, 3rem);
-      color: var(--primary-color);
       margin-bottom: 1.5rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -58,8 +57,8 @@
 
     .btn-agendar {
       display: block;
-      background-color: var(--primary-color);
-      color: #fff;
+      background-color: #FFD600; // actualizado a amarillo
+      color: #000;
       padding: 0.8rem 2rem;
       font-weight: bold;
       text-decoration: none;
@@ -69,15 +68,11 @@
       transition: all var(--transition);
       border: 2px solid transparent;
       text-transform: uppercase;
-      letter-spacing: 1px;
 
       &:hover {
-        background-color: #a61f25;
+        background-color: #FFEB3B; // nuevo hover amarillo
         transform: translateY(-3px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      }
-      &:active {
-        transform: translateY(1px);
       }
     }
   }

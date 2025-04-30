@@ -24,7 +24,6 @@ export class MarcasComponent implements AfterViewInit, OnDestroy {
 
   logos = [
     { src: 'assets/marca1.png', alt: 'Logo Marca 1' },
-    { src: 'assets/marca2.png', alt: 'Logo Marca 2' },
     { src: 'assets/marca3.png', alt: 'Logo Marca 3' },
     { src: 'assets/marca4.png', alt: 'Logo Marca 4' },
     { src: 'assets/marca5.png', alt: 'Logo Marca 5' }

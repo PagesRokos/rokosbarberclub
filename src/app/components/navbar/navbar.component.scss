@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-bottom: 2px solid #c12727;
+  border-bottom: 2px solid #2C2C2C; // antes: #c12727
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 
   .logo img {
@@ -37,19 +37,26 @@
       color: white;
       text-decoration: none;
       transition: color var(--transition);
+      text-transform: uppercase;
 
       &:hover {
-        color: #c1272d;
+        color: #c1b727;
       }
 
       &.reservar-btn {
-        background-color: #c1272d;
-        padding: 0.5rem 1rem;
+        background-color: #FFD600;
+        color: #222;
         border-radius: 8px;
-        color: white;
+        font-weight: bold;
+        transition: background 0.3s, color 0.3s;
+        text-transform: uppercase;
+        padding: 0.5rem 1.0rem; // más grande
+        box-shadow: 0 4px 18px rgba(255, 214, 0, 0.25);
+        letter-spacing: 1.5px;
 
         &:hover {
-          background-color: #a61f25;
+          background-color: #FFEB3B;
+          color: #000;
         }
       }
     }
